@@ -1,27 +1,24 @@
-﻿using System.Data.SQLite;
+﻿using Dapper;
+using System.Data.SQLite;
 
 namespace Estudante.Repository.Data
 {
-    public class inicializadorBD
+    public static class inicializadorBD
     {
-
-        private const string ConnectionString = "Data Source=Supermercado.db";
-
         public static void Inicializar()
         {
-            using (var connection = new SQLiteConnection(ConnectionString))
-            {
-                connection.Open();
-                string commandoSQL = @"   
-                 CREATE TABLE IF NOT EXISTS Estudantes( 
-                 Altura REAL NOT NULL
-                 Peso REAL NOT NULL
-                 Idade INTEGER NOT NULL
-                 Nome TEXT NOT NULL,
-                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                );";
-            }
+            using var connection = new SQLiteConnection("Data Source=Escola.db");
 
+            string commandoSQL = @"   
+                 CREATE TABLE IF NOT EXISTS Estudantes( 
+                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 Nome TEXT NOT NULL,
+                 Altura REAL NOT NULL,
+                 Peso REAL NOT NULL,
+                 Idade INTEGER NOT NULL
+                );";
+
+            connection.Execute(commandoSQL);
         }
     }
 }
