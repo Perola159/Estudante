@@ -13,7 +13,7 @@ namespace Estudante.Repository.Data
             {
                 connection.Open();
                 string commandoSQL = @"   
-                 CREATE TABLE IF NOT EXISTS Estudantes(
+                 CREATE TABLE IF NOT EXISTS Estudantes( 
                  Altura REAL NOT NULL
                  Peso REAL NOT NULL
                  Idade INTEGER NOT NULL
