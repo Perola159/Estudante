@@ -10,7 +10,7 @@ namespace Estudante.Repository.Data
             using var connection = new SQLiteConnection("Data Source=Escola.db");
 
             string commandoSQL = @"   
-                 CREATE TABLE IF NOT EXISTS Estudantes( 
+                 CREATE TABLE IF NOT EXISTS Alunos( 
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  Nome TEXT NOT NULL,
                  Altura REAL NOT NULL,
@@ -19,6 +19,7 @@ namespace Estudante.Repository.Data
                 );";
 
             connection.Execute(commandoSQL);
+
         }
-    }
+    }   
 }
