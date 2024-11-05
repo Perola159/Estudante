@@ -5,6 +5,7 @@ using Estudante.Service.Service_Interface;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,16 @@ namespace Estudante.Service
         public List<Aluno> Listar()
         {
             return repository.Listar();
+        }
+
+        public void Editar(Aluno editAluno)
+        {
+            repository.Editar(editAluno);
+        }
+
+        public void Remover(int id)
+        {
+            repository.Remover(id);
         }
     }
 }

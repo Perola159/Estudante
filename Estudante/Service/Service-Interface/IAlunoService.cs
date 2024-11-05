@@ -11,6 +11,10 @@ namespace Estudante.Service.Service_Interface
     {
         public void Adicionar(Aluno aluno);
         public List<Aluno> Listar();
-        
+        public void Editar(Aluno editAluno);
+
+
+        public void Remover(int id);
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Estudante.Entidade;
+﻿using Dapper.Contrib.Extensions;
+using Estudante.Entidade;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -13,8 +14,13 @@ namespace Estudante.Repository.Repository_Interface
 
         public void Adicionar(Aluno aluno);
 
-
         public List<Aluno> Listar();
-        
+
+        public void Remover(int id);
+
+        public void Editar(Aluno aluno);
+
+        public Aluno BuscarPorId(int id);
+       
     }
 }

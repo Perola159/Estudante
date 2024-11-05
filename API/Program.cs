@@ -15,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-
+///REGISTRO DE SERVIÇO 
 builder.Services.AddScoped<IAlunoService, AlunoService>();
 
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
