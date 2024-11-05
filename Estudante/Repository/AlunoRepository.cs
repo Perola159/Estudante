@@ -1,5 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 using Estudante.Entidade;
+using Estudante.Repository.Repository_Interface;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Estudante.Repository
 {
-    public  class AlunoRepository
+    public  class AlunoRepository : IAlunoRepository
     {
         private readonly string ConnectionString;
         public AlunoRepository(IConfiguration connectioString)

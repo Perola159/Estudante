@@ -1,5 +1,6 @@
 ﻿using Estudante.Entidade;
 using Estudante.Service;
+using Estudante.Service.Service_Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -8,20 +9,18 @@ namespace API.Controllers
     [Route("[controller]")]
     public class AlunoController : ControllerBase
     {
-        private readonly AlunoService _service;
+        private readonly IAlunoService _service;
 
-        public AlunoController(IConfiguration config)
+        public AlunoController(IAlunoService config)
         {
-            _service = new AlunoService(config);
-            
-
+            _service = config;
         }
+
         [HttpPost("Adicionar-Aluno")]
         public void AdicionarAluno(Aluno alun)
         {
             _service.Adicionar(alun);
         }
-
 
         [HttpGet("Listar-Aluno")]
         public List<Aluno> ListarAluno()

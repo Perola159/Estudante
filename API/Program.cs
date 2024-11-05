@@ -1,4 +1,8 @@
+using Estudante.Repository;
 using Estudante.Repository.Data;
+using Estudante.Repository.Repository_Interface;
+using Estudante.Service;
+using Estudante.Service.Service_Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,13 @@ inicializadorBD.Inicializar();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+
+builder.Services.AddScoped<IAlunoService, AlunoService>();
+
+builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+
 
 var app = builder.Build();
 
